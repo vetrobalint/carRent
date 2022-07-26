@@ -1,0 +1,165 @@
+html{
+	background-color: bisque;
+}
+
+form {
+    font-size: 20px;
+    text-align: center;
+}
+
+input, textarea {
+    margin: 10px 0;
+    text-align: center;
+    background-color: white;
+    border-color: #0037ff;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-radius: 6px 6px;
+    border-style: ridge;
+    border-width: 3px;
+}
+
+input:focus, textarea:focus {
+    background-color: #fff3a0;
+    outline: none;
+}
+
+.registLabel, .newCarLabel, .updateCarLabel{
+    color: #0037ff;
+    text-shadow: 1px 1px 1px #012195FF;
+}
+
+.registInput, .newCarInput, .updateCarInput{
+    color: black;
+}
+
+fieldset#registForm, fieldset#newCarForm, fieldset#updateCarForm{
+    width: 400px;
+    margin: 50px auto auto;
+    background-color: white;
+    border-style: ridge;
+    border-width: 5px;
+    border-radius: 6px 6px;
+    border-color: #0037ff;
+    opacity: 70%;
+}
+
+legend#registTitle, legend#newCarTitle, legend#updateCarTitle{
+    color: #0037ff;
+    font-size: 33px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #0037ff;
+    text-shadow: 1px 1px 1px #012195FF;
+    margin-bottom: 3px;
+    padding: 0 8px 3px 8px;
+    background-color: white;
+    border-radius: 6px 6px;
+    border-color: #0037ff;
+    border-style: ridge;
+    border-bottom-style: hidden;
+    border-width: 5px;
+    box-shadow: 0 2px 4px #012195FF;
+}
+
+#bookedButton, #resetButton, #addButton, #updateButton{
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    background-color: #0037ff;
+    border-style: none;
+    border-radius: 3px 3px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.bookedButton:hover, .resetButton:hover, .addButton:hover, .updateButton:hover{
+    background-color: #FFE800 !important;
+    color: #0037ff !important;
+}
+
+.containerR {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.containerR input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmarkR {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 50%;
+    border-color: #0037ff;
+    border-style: ridge;
+    border-width: 3px;
+}
+
+.containerR:hover input ~ .checkmarkR {
+    background-color: #ffe800;
+    color: #0037ff;
+}
+
+.containerR input:checked ~ .checkmarkR {
+    background-color: white;
+}
+
+.checkmarkR:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+
+.containerR input:checked ~ .checkmarkR:after {
+    display: block;
+}
+
+.containerR .checkmarkR:after {
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0037ff;
+}
+
+option:checked {
+    display: none;
+}
+
+select {
+    color: #0037ff;
+    background-color: white;
+    border-color: #0037ff;
+    border-style: ridge;
+    border-width: 3px;
+    border-radius: 5px 5px;
+}
+
+select:active, select:focus {
+    color: #0037ff;
+    background-color: white;
+    outline: none;
+}
+
+option:not(:checked) {
+    color: #0037ff;
+    background-color: white;
+}

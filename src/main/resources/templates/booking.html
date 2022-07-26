@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Regisztráció</title>
+    <link th:href="@{/css/forms.css}" href="../static/css/forms.css" rel="stylesheet">
+</head>
+<body>
+	<fieldset id="registForm">
+		<legend id="registTitle">Foglalás</legend>
+		<form th:action="@{/booking}" action="booking.html" method="post" enctype="multipart/form-data" autocomplete="off">
+			<label class="registLabel">Név:
+				<br/>
+				<input class="registInput" type="text" name="name" size="30" placeholder="Írd be a neved" required />
+			</label>
+			<br/>
+			<label class="registLabel">E-mail cím:
+				<br/>
+				<input class="registInput" type="email" name="email" size="40" placeholder="példa@gmail.com" required />
+			</label>
+			<br/>
+			<label class="registLabel">Lakcím:
+				<br/>
+				<input class="registInput" type="text" name="address" size="70" placeholder="Irányítószám, Város Utcanév Házszám (+ emelet, csengő, stb...)" required />
+			</label>
+			<br/>
+			<label class="registLabel">Telefonszám:
+				<br/>
+				<input class="registInput" type="tel" name="phone" maxlength="12" placeholder="+36 𝩊𝩊 𝩊𝩊𝩊 𝩊𝩊𝩊𝩊" required />
+			</label>
+			<br/>
+			<label class="registLabel">Mettől:
+				<br/>
+				<input class="registInput" th:value="${startDate}" type="date" name="startDate" required />
+			</label>
+			<br/>
+			<label class="registLabel">Meddig:
+				<br/>
+				<input class="registInput" th:value="${endDate}" type="date" name="endDate" required />
+			</label>
+			<br/>
+			<label class="registLabel">Összeg: (Ez az ár szorzódik a napok számával)
+				<br/>
+				<input class="registInput" th:value="${carPrice}" type="number" name="price" size="70" readonly="" />
+			</label>
+			<br/>
+			<label class="registLabel">
+				<br/>
+				<input th:value="${carId}" class="registInput" type="hidden" name="carId" />
+			</label>
+			<br/>
+			<input id="resetButton" class="resetButton" type="reset" name="reset" value="Mégsem" />
+			<input id="bookedButton" class="bookedButton" type="submit" name="submit" value="Lefoglalás"/>
+		</form>
+	</fieldset>
+</body>
+</html>

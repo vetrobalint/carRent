@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Új autó</title>
+    <link th:href="@{/css/forms.css}" href="../static/css/forms.css" rel="stylesheet">
+</head>
+<body>
+	<fieldset id="updateCarForm">
+		<legend id="updateCarTitle">Autó módosítás</legend>
+		<form th:action="@{/updateCar}" action="updateCar.html" method="post" enctype="multipart/form-data" autocomplete="off">
+			<input th:value="${id}" class="updateCarInput" type="hidden" name="id" readonly="" />
+			<br/>
+			<label class="updateCarLabel">Név:
+				<br/>
+				<input th:value="${name}" class="updateCarInput" type="text" name="name" size="50" placeholder="Add meg az autó márkáját és típusát" required />
+			</label>
+			<br/>
+			<label class="updateCarLabel">Váltó:
+				<br/>
+				<input th:value="${gearShift}" class="updateCarInput" type="text" name="gearShift" size="50" placeholder="Manuális" required />
+			</label>
+			<br/>
+			<label class="updateCarLabel">Ülések:
+				<br/>
+				<input th:value="${seats}" class="updateCarInput" type="number" name="seats" size="6" placeholder="5" required />
+			</label>
+			<br/>
+			<label class="updateCarLabel">Napi ár:
+				<br/>
+				<input th:value="${price}" class="updateCarInput" type="number" name="price" size="6" placeholder="1500" required />
+			</label>
+			<br/>
+			<label class="updateCarLabel">Deaktiválás</label>
+			<br/>
+			<label for="yes" class="containerR" style="font-size: 18px">: Igen
+				<input id="yes" type="radio" name="available" value="false"/>
+				<span class="checkmarkR"></span>
+			</label>
+			<label for="no" class="containerR" style="font-size: 18px">: Nem
+				<input id="no" type="radio" name="available" value="true" checked/>
+				<span class="checkmarkR"></span>
+			</label>
+			<br/>
+			<input id="resetButton" class="resetButton" type="reset" name="reset" value="Mégsem" />
+			<input id="updateButton" class="updateButton" type="submit" name="submit" value="Módosítás"/>
+		</form>
+	</fieldset>
+</body>
+</html>

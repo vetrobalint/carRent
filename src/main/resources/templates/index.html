@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Foglalás</title>
+    <link th:href="@{/css/index.css}" href="../static/css/index.css" rel="stylesheet">
+</head>
+<body>
+	<h1>Autó foglalás</h1>
+	<hr>
+	<form th:action="@{/index/dates}" action="index.html" id="dateForm">
+		<label for="startDate">Mettől:</label>
+		<input type="date" value="2022-07-24" id="startDate" name="startDate">
+		<br>
+		<label for="endDate">Meddig:</label>
+		<input type="date" value="2022-07-24" id="endDate" name="endDate">
+		<br>
+		<input type="submit" value="Keresés">
+	</form>
+	<br/>
+	<th:block th:each="car : ${carList}">
+		<table class="cars">
+			<tr>
+				<th colspan="2"></th>
+			</tr>
+			<tr>
+				<td>Név:</td>
+				<td th:text="${car.name}"></td>
+			</tr>
+			<tr>
+				<td>Váltó:</td>
+				<td th:text="${car.gearShift}"></td>
+			</tr>
+			<tr>
+				<td>Ülések:</td>
+				<td th:text="${car.seats}"></td>
+			</tr>
+			<tr>
+				<td>Napi ár:</td>
+				<td th:text="${car.price} + 'Ft'"></td>
+			</tr>
+			<tr>
+				<td>Kép:</td>
+<!--				<img th:src="${car.picture}"/>-->
+			</tr>
+			<tr>
+				<td hidden th:text="${startDate}"></td>
+			</tr>
+			<tr>
+				<td hidden th:text="${endDate}"></td>
+			</tr>
+			<tr>
+				<td>
+					<a th:href="@{/booking/{id}(id=${car.id})}">Foglalás</a>
+				</td>
+			</tr>
+		</table>
+	</th:block>
+</body>
+</html>

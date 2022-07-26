@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Új autó</title>
+    <link th:href="@{/css/forms.css}" href="../static/css/forms.css" rel="stylesheet">
+</head>
+<body>
+	<fieldset id="newCarForm">
+		<legend id="newCarTitle">Új autó</legend>
+		<form th:action="@{/newCar}" action="newCar.html" method="post" enctype="multipart/form-data" autocomplete="off">
+			<label class="newCarLabel">Név:
+				<br/>
+				<input class="newCarInput" type="text" name="name" size="50" placeholder="Add meg az autó márkáját és típusát" required />
+			</label>
+			<br/>
+			<label class="newCarLabel">Váltó:
+				<br/>
+				<input class="newCarInput" type="text" name="gearShift" size="50" placeholder="Manuális" required />
+			</label>
+			<br/>
+			<label class="newCarLabel">Ülések:
+				<br/>
+				<input class="newCarInput" type="number" name="seats" size="6" placeholder="5" required />
+			</label>
+			<br/>
+			<label class="newCarLabel">Napi ár:
+				<br/>
+				<input class="newCarInput" type="number" name="price" size="6" placeholder="1500" required />
+			</label>
+			<br/>
+			<label class="newCarLabel">Kép elérési útvonala:
+				<br/>
+				<input class="newCarInput" type="text" name="picture" size="50" placeholder="images/id.jpg || Nem kötelező" />
+			</label>
+			<br/>
+			<label class="updateCarLabel">Elérhető</label>
+			<br/>
+			<label for="yes" class="containerR" style="font-size: 18px">: Igen
+				<input id="yes" type="radio" name="available" value="true" checked/>
+				<span class="checkmarkR"></span>
+			</label>
+			<label for="no" class="containerR" style="font-size: 18px">: Nem
+				<input id="no" type="radio" name="available" value="false"/>
+				<span class="checkmarkR"></span>
+			</label>
+			<br/>
+			<input id="resetButton" class="resetButton" type="reset" name="reset" value="Mégsem" />
+			<input id="addButton" class="addButton" type="submit" name="submit" value="Felvitel"/>
+		</form>
+	</fieldset>
+</body>
+</html>
